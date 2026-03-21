@@ -1,3 +1,4 @@
+
 # Customer Churn Prediction — AI Dashboard
 
 A full-screen, dark-themed AI dashboard for predicting customer churn using a trained XGBoost model. Built with Flask + React.
@@ -125,3 +126,4 @@ gunicorn app:app --workers 4 --bind 0.0.0.0:5000
 ## License
 
 This project uses the [Telco Customer Churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
+
