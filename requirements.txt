@@ -1,7 +1,7 @@
 Flask==3.0.0
 Flask-CORS==4.0.0
 scikit-learn>=1.7.0
-pandas>=2.2.0 
+pandas>=2.2.0
 numpy>=1.26.0
 xgboost==2.0.3
 imbalanced-learn==0.12.0

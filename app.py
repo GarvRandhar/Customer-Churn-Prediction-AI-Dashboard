@@ -25,10 +25,13 @@ FEATURE_ORDER = [
     'MonthlyCharges', 'TotalCharges'
 ]
 
-@app.route('/')
-def serve():
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
     """Serve the React app"""
-    if os.path.exists(os.path.join(app.static_folder, 'index.html')):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    elif os.path.exists(os.path.join(app.static_folder, 'index.html')):
         return send_from_directory(app.static_folder, 'index.html')
     return {'message': 'React app not built yet. Run: cd client && npm run build'}, 500
 
