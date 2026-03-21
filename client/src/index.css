@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply m-0 p-0 bg-dark-900 text-txt-primary font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply antialiased;
+    box-sizing: border-box;
+  }
+
+  input, select, textarea {
+    @apply font-sans;
+  }
+
+  /* Remove default autofill styling */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #1E293B inset;
+    -webkit-text-fill-color: #F8FAFC;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+/* Gauge animation */
+.gauge-circle {
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Step transitions */
+.step-enter {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.step-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.step-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.step-exit-active {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.25s ease-in;
+}
+
+/* Number input arrow removal */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
