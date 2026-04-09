@@ -31,4 +31,8 @@ build/
 *.swo
 *~
 .pytest_cache/
+catboost_info/
+.ipynb_checkpoints/
+benchmark_report.json
+benchmark_leaderboard.md
 
